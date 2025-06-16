@@ -6,6 +6,7 @@ import two from '../assets/Number/2.svg'
 import three from '../assets/Number/3.svg'
 import four from '../assets/Number/4.png'
 import five from '../assets/Number/5.svg'
+import noPoster from '../assets/No-Poster.png'
 import { Link } from 'react-router-dom'
 
 const Trending = ({ movie }) => {
@@ -21,7 +22,7 @@ const Trending = ({ movie }) => {
 
     const imageUrl = poster_path
         ? `https://image.tmdb.org/t/p/w500/${poster_path}`
-        : 'src/assets/No-Poster.png';
+        : noPoster;
 
     const [trendingMovies, setTrendingMovies] = useState([]);
 
@@ -44,13 +45,13 @@ const Trending = ({ movie }) => {
         <div className="p-4 lg:w-[85%] mx-auto">
             <h2 className="text-2xl font-bold text-white mb-6">Top Searches</h2>
             <div className="flex items-center overflow-x-auto scrollbar-hide space-x-6 cursor-pointer">
-                {trendingMovies.map((movie, index) => (
+                {trendingMovies?.map((movie, index) => (
                     <Link key={movie.$id} to={`/movie/${movie.movie_id}`}>
                         <div
                             key={movie.$id}
                             className="group flex-shrink-0 w-[180px] h-[270px] bg-cover bg-center rounded-lg relative transition-transform duration-300 hover:scale-105 cursor-pointer"
                             style={{
-                                backgroundImage: `url(${movie.poster_url || "src/assets/No-Poster.png"})`,
+                                backgroundImage: `url(${movie.poster_url || noPoster})`,
                             }}
                         >
                             {/* Gradient overlay */}

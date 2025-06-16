@@ -6,6 +6,8 @@ import Trending from "./Trending";
 import { Routes, Route } from 'react-router-dom';
 import MovieDetails from "./MovieDetails";
 import Footer from "./Footer";
+import heroImg from '../assets/hero-img.png'
+import searchIcon from '../assets/search.svg'
 
 const API_BASE_URL = "https://api.themoviedb.org/3"
 const API_KEY = import.meta.env.VITE_TMBD_API_KEY;
@@ -54,7 +56,7 @@ const Home = () => {
                     <img src="src/assets/logo.png" alt="logo" />
                 </div> */}
                 <div className='flex justify-center items-start'>
-                    <img className='h-[350px]' src="src/assets/hero-img.png" alt="hero" />
+                    <img className='h-[350px]' src={heroImg} alt="hero" />
                 </div>
                 <div className='flex flex-col justify-center items-center text-center text-[56px] font-[60px] text-white leading-[60px] '>
                     <h1 className=''>Find <span className='bg-gradient-to-r from-[#D6C7FF] to-[#AB8BFF] bg-clip-text text-transparent'>Movies</span> You'll Love</h1>
@@ -70,7 +72,7 @@ const Home = () => {
                             className="bg-[#0F0E24] text-white w-full py-4 pl-12 pr-4 rounded-md focus:outline-none"
                         />
                         <img
-                            src='./src/assets/search.svg'
+                            src={searchIcon}
                             alt="search"
                             className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 opacity-60"
                         />

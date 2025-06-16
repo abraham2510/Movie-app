@@ -70,7 +70,7 @@ const Home = () => {
                             className="bg-[#0F0E24] text-white w-full py-4 pl-12 pr-4 rounded-md focus:outline-none"
                         />
                         <img
-                            src="src/assets/search.svg"
+                            src='./src/assets/search.svg'
                             alt="search"
                             className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 opacity-60"
                         />
@@ -87,7 +87,7 @@ const Home = () => {
                             <h2 className="text-2xl font-bold text-white">Popular Movies</h2>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                            {movieList.map((movie) => (
+                            {movieList?.map((movie) => (
                                 <MovieCard key={movie.id} movie={movie} />
                             ))}
                         </div>

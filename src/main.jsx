@@ -1,19 +1,10 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import Header from './Components/Header'
-
-const Body = () => {
-
-  return (
-    <>
-      <Header />
-    </>
-  )
-}
+import App from './Components/App'
+import { BrowserRouter } from 'react-router-dom';
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <Body />
-  </StrictMode>,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
 )
